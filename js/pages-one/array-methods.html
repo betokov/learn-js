@@ -109,6 +109,42 @@
 
     <p>Очень незначительным отличием <b>includes</b> является то, что он правильно обрабатывает <b>NaN</b> в отличие от <b>indexOf/lastIndexOf</b></p>
 
+    <h2>find и findIndex</h2>
+
+    <code class="code-block">
+      let result = arr.find(function(item, index, array) { <br>
+        &nbsp;// если true - возвращается текущий элемент и перебор прерывается <br>
+        &nbsp;// если все итерации оказались ложными, возвращается undefined <br>
+      });
+    </code>
+
+    <p>Представьте, что у нас есть массив объектов. Как нам найти объект с определённым условием?</p>
+
+    <code class="code-block">
+      let users = [ <br>
+        &nbsp;{id: 1, name: "Вася"}, <br>
+        &nbsp;{id: 2, name: "Петя"}, <br>
+        &nbsp;{id: 3, name: "Маша"} <br>
+      ]; <br><br>
+
+    let user = users.find(item => item.id == 1); <br><br>
+
+    console.log(user); // {id: 1, name: "Вася"}
+    </code>
+
+    <h2>filter</h2>
+
+    <p>На тот случай, если найденных элементов может быть много, предусмотрен метод <b>arr.filter(fn)</b>.</p>
+
+    <code class="code-block">
+      let results = arr.filter(function(item, index, array) { <br>
+        &nbsp;// если true - элемент добавляется к результату, и перебор продолжается <br>
+        &nbsp;// возвращается пустой массив в случае, если ничего не найдено <br>
+      });
+    </code>
+
+    <h2>Преобразование массива</h2>
+
     <br><br><a class="link-back"  href="../index.html">Назад</a>
   </main>
 
